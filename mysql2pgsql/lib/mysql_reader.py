@@ -196,7 +196,7 @@ class MysqlReader(object):
                     trigger['timing'] = row[4]
 
                     trigger['statement'] = re.sub('^BEGIN', '', trigger['statement'])
-                    trigger['statement'] = re.sub('^END', '', trigger['statement'], flags=re.MULTILINE)
+                    trigger['statement'] = re.sub('^END', '', trigger['statement'], m)
                     trigger['statement'] = re.sub('`', '', trigger['statement'])
 
                     self._triggers.append(trigger)
